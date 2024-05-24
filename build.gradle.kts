@@ -1,11 +1,12 @@
 plugins {
     kotlin("jvm") version "1.9.0"
     application
+    `java-library`
     `maven-publish`
 }
 
 group = "com.github.CzinkeM"
-version = "1.0-SNAPSHOT"
+version = "0.1"
 
 repositories {
     mavenCentral()
@@ -29,4 +30,15 @@ application {
     mainClass.set("MainKt")
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.CzinkeM"
+            artifactId = "thevr_happyhpour_scraper"
+            version = "0.1"
+
+            from(components["kotlin"])
+        }
+    }
+}
 
