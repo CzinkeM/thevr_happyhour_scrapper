@@ -11,5 +11,5 @@ interface ScraperDriver {
 
     fun getRoot(): WebElement
 
-    fun quitDriver();
+    fun quitDriver()
 }
